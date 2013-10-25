@@ -19,7 +19,9 @@ vindo da outra url que você mapeou.
 
 sub replace_url {
   my ( $self, $args ) = @_; 
-  if (  exists $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string } && 
+  if (
+        defined $self->http_request &&
+        exists $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string } && 
         exists $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string }->{ url } ) {
     my $nova_url = 
         URI->new( $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string }->{url} );

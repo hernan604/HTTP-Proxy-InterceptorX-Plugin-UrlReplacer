@@ -14,7 +14,7 @@ with qw/
 /;
 
 my $url_path;
-my $proxy_port        = 32452;
+my $proxy_port        = 2000+int(rand(20000)) ;
 my $tests_config      = TestsConfig->new();
 my $server            = TestServer->new();
    $server->set_dispatch( $tests_config->conteudos );
