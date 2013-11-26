@@ -17,14 +17,14 @@ vindo da outra url que você mapeou.
 
 =cut
 
-sub replace_url {
+sub UrlReplacer {
   my ( $self, $args ) = @_; 
   if (
         defined $self->http_request &&
         exists $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string } && 
-        exists $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string }->{ url } ) {
+        exists $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string }->{ UrlReplacer } ) {
     my $nova_url = 
-        URI->new( $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string }->{url} );
+        URI->new( $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string }->{ UrlReplacer } );
     if ( exists $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string }->{ use_random_var } 
              && $self->urls_to_proxy->{ $self->http_request->{ _uri }->as_string }->{ use_random_var } ) {
         $nova_url->query_param( "var".int(rand(99999999)) => int(rand(99999999)));
@@ -40,7 +40,7 @@ sub replace_url {
 
 after 'BUILD'=>sub {
     my ( $self ) = @_; 
-    $self->append_plugin_method( "replace_url" );
+    $self->append_plugin_method( "UrlReplacer" );
 };
 
 
