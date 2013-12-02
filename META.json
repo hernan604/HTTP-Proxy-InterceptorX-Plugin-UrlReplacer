@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "replaces response content from another url",
    "author" : [
       "Hernan Lopes <hernan@cpan.org>"
    ],
@@ -46,6 +46,20 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.01"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/hernan604/HTTP-Proxy-InterceptorX-Plugin-UrlReplacer/issues"
+      },
+      "homepage" : "https://github.com/hernan604/HTTP-Proxy-InterceptorX-Plugin-UrlReplacer",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/hernan604/HTTP-Proxy-InterceptorX-Plugin-UrlReplacer.git",
+         "web" : "https://github.com/hernan604/HTTP-Proxy-InterceptorX-Plugin-UrlReplacer"
+      }
+   },
+   "version" : "0.01",
+   "x_contributors" : [
+      "Hernan Lopes <aut_hlopes@uolinc.com>"
+   ]
 }
 
